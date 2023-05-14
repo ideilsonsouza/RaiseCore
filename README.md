@@ -34,6 +34,7 @@ Este é o ramo de desenvolvimento e pode ter problemas. Use o [latest release](h
 
 ## Support
 Se você achar este projeto útil, considere fazer uma doação.
+##
 Chave PIX Aleatório: "133974c8-f2e7-49f0-943b-1d982b39ec7a"
 
 
