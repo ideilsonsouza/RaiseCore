@@ -1,0 +1,11 @@
+object CoreViewForm: TCoreViewForm
+  Left = 1520
+  Height = 665
+  Top = 250
+  Width = 665
+  BorderStyle = bsSingle
+  Caption = 'Formulário base'
+  Color = clWhite
+  KeyPreview = True
+  Position = poMainFormCenter
+end

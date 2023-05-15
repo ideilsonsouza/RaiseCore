@@ -43,7 +43,7 @@ type
         class function Action:IModelConfiguracao;
     end;  
 
-    TModelConexao = class (TInterfacedObject, IModelConnection)
+    TModelConnection = class (TInterfacedObject, IModelConnection)
     private
         FConexao:TZConnection;
         function TestarConexao: boolean;
@@ -58,7 +58,7 @@ type
 implementation 
 
 uses
-    Core.Model.GenFiles, Core.Model.Consts, Model.JDados;
+    Core.Model.GenFiles, Core.Model.Consts, Core.Model.JSON;
 
 constructor TModelConfiguracao.Create;
 begin
@@ -133,22 +133,22 @@ end;
 
 {################------------------IINICO-----------------########################}
 
-constructor TModelConexao.Create;
+constructor TModelConnection.Create;
 begin
 
 end; 
 
-destructor TModelConexao.Destroy;
+destructor TModelConnection.Destroy;
 begin
 
 end;
 
-class function TModelConexao.Action:IModelConnection;
+class function TModelConnection.Action:IModelConnection;
 begin
     Result := Self.Create;
 end;
 
-function TModelConexao.TestarConexao: boolean;
+function TModelConnection.TestarConexao: boolean;
 begin
   Result := False;
 
@@ -160,7 +160,7 @@ begin
       begin
         Protocol := TArquivos.Action.Configuracao.ReadString(IniDataSession, KeyProtocol, DefaultProtocol);
         HostName := TArquivos.Action.Configuracao.ReadString(IniDataSession, KeyServer, DefaultServer);
-        Port := TArquivos.Action.Configuracao.ReadInteger(IniDataSession, KeyPort, DefaultPorta);
+        Port := TArquivos.Action.Configuracao.ReadInteger(IniDataSession, KeyPort, DefaultPort);
         User := TArquivos.Action.Configuracao.ReadString(IniDataSession, KeyUser, DefaultUser);
         Password := {Decode(} TArquivos.Action.Configuracao.ReadString(IniDataSession, KeyPass, EmptyStr){)};
         Database := TArquivos.Action.Configuracao.ReadString(IniDataSession, KeyData, DefaultData);
@@ -174,7 +174,7 @@ begin
   end;
 end;    
 
-function TModelConexao.SelecionarTabela(Readcommand:string): string;
+function TModelConnection.SelecionarTabela(Readcommand:string): string;
 var
   FQuery: TZQuery;
 begin
@@ -192,7 +192,7 @@ begin
             Open;
             if not IsEmpty then
             begin
-              Result :=  TModelJDados.Action.SetarQuery(FQuery).ObterJSON;
+              Result :=  TModelJson.Action.SetarQuery(FQuery).ObterJSON;
             end
             else
               Result := '{"Mensagem":"Nenhun dado foi encontrado","reomendacao":"Veifique a sua consuta e tente novamente"}';
@@ -213,7 +213,7 @@ begin
   end;
 end;
 
-function TModelConexao.ExecutarComandoSQL(WriteCommand: string): boolean;
+function TModelConnection.ExecutarComandoSQL(WriteCommand: string): boolean;
 var
   FQuery: TZQuery;
 begin

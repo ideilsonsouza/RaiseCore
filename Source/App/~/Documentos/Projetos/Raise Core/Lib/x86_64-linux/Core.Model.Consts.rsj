@@ -1,0 +1,12 @@
+{"version":1,"strings":[
+{"hash":78007543,"name":"core.model.consts.nomearquivoconfiguracao","sourcebytes":[67,111,110,102,105,103],"value":"Config"},
+{"hash":217161,"name":"core.model.consts.extensaoarquivoconfiguracao","sourcebytes":[46,105,110,105],"value":".ini"},
+{"hash":305313,"name":"core.model.consts.inidatasession","sourcebytes":[68,97,116,97],"value":"Data"},
+{"hash":78007543,"name":"core.model.consts.iniconfigsession","sourcebytes":[67,111,110,102,105,103],"value":"Config"},
+{"hash":158031660,"name":"core.model.consts.keyprotocol","sourcebytes":[112,114,111,116,111,99,111,108],"value":"protocol"},
+{"hash":211615474,"name":"core.model.consts.keyserver","sourcebytes":[115,101,114,118,105,100,111,114],"value":"servidor"},
+{"hash":7825825,"name":"core.model.consts.keyport","sourcebytes":[112,111,114,116,97],"value":"porta"},
+{"hash":212568207,"name":"core.model.consts.keyuser","sourcebytes":[117,115,117,97,114,105,111],"value":"usuario"},
+{"hash":7980257,"name":"core.model.consts.keypass","sourcebytes":[115,101,110,104,97],"value":"senha"},
+{"hash":6849695,"name":"core.model.consts.keydata","sourcebytes":[98,97,110,99,111],"value":"banco"}
+]}
