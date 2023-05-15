@@ -1,6 +1,0 @@
-inherited AppViewForm: TAppViewForm
-  BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
-  BorderStyle = bsSizeable
-  Constraints.MinHeight = 665
-  Constraints.MinWidth = 665
-end
